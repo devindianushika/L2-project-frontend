@@ -1,0 +1,25 @@
+.btn-addnews-css {
+    margin-left:80%;
+}
+.head
+{
+    
+    margin-left:40%!important;
+}
+.divv{
+    background-color: darkgoldenrod;
+
+}
+
+.view-profile-css
+{
+    width: 40px!important;
+    height: 40px!important;
+    
+}
+.main-div{
+    
+    display: flex;
+    align-items: center;
+    width: 50%;
+    }

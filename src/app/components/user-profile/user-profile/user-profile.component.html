@@ -1,0 +1,122 @@
+<div class="main-content" >
+  
+    <form>
+  
+    <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-8">
+            <br><br>
+            <mat-card>
+              <div>
+                  <div class="header">
+                      <h4 class="title">Edit Profile</h4>
+                  </div>
+                  <div class="content">
+                      <form>
+                          <div class="row">
+                              <div class="col-md-5">
+                                  <div class="form-group">
+                                      <label>Resgistration Number</label>
+                                      <input  type="text" class="form-control"  disabled value="{{ regNo }}">
+                                  </div>
+                              </div>
+
+
+                              <!-- <div class="col-md-3">
+                                  <div class="form-group">
+                                      <label>Username</label>
+                                      <input type="text" class="form-control" placeholder="Username" value="michael23">
+                                  </div>
+                              </div> -->
+                              <div class="col-md-4" *ngIf="emailS">
+                                  <div class="form-group">
+                                      <label for="exampleInputEmail1">Email address</label>
+                                      <input type="email" [(ngModel)]="email" class="form-control" [formControl]="emailCntrl" ng-disabled="editEmail" placeholder="Email" value="{{ email }}">
+                                  </div>
+                              </div>
+                          </div>
+
+                          <div class="row">
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label>Full Name</label>
+                                      <input type="text" class="form-control" disabled placeholder="Full Name" value="{{ fullName }}">
+                                  </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                      <label>Gender</label>
+                                      <input type="text" class="form-control" disabled placeholder="Gender" value="{{gender}}">
+                                  </div>
+                              </div>
+                          </div>
+
+
+
+                          <div class="row" >
+
+                            <div class="col-md-6" *ngIf="designationS">
+                                <div class="form-group">
+                                    <label>Designation</label>
+                                    <input type="text" class="form-control" placeholder="Designation" disabled  value="{{designation}}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6" *ngIf="birthdayS">
+                                <div class="form-group" >
+                                    <label>Birthday</label>
+                                    <input type="text" class="form-control" placeholder="Birthday" disabled value="{{birthday}}">
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label>Contact Number</label>
+                                    <input type="text" class="form-control" [(ngModel)]="contactNumber" ng-disabled="editContactNumber" [formControl]="contactNumberCntrl"  placeholder="Contact Number" value="{{contactNumber}}">
+                                </div>
+                            </div>
+
+                        </div>
+
+                          
+                                
+                          <!-- parent student -->
+                          <div class="row" *ngIf="addressS" >
+                              <div class="col-md-12">
+                                  <div class="form-group">
+                                      <label>Address</label>
+                                      <input type="text" class="form-control" [(ngModel)]="address" [formControl]="addressCntrl" ng-disabled="editAddress" placeholder="Home Address" value="{{ address }}">
+                                  </div>
+                              </div>
+                          </div>
+
+                        <div class="row">
+                            
+                        </div>
+
+                          
+                          <button type="submit" class="btn btn-info btn-fill pull-right" (click)="updateProfile()">Update Profile</button>
+                          <button  class="btn btn-info btn-fill pull-right edit-profile" (click)="editProfile()">Edit Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+            </mat-card>
+          </div>
+        
+          <div class="col-md-4">
+            <br><br>
+              <mat-card>
+                <img class="avatar border-gray" *ngIf="previewUrl" [src]="previewUrl" alt="..." (click)="selectFile.click()" />
+                <img class="avatar border-gray" *ngIf="!previewUrl" src="{{ backendUrl }}file/images/get/{{ imageType }}/{{ imageName }}/" onError="this.src='../../../../assets/img/uprofile.png'" alt="..." (click)="selectFile.click()" />
+                <input type="file" accept="image/*" (change)="fileProgress($event)" style="display: none" #selectFile>
+                  <h4 class="title"> {{ fullName }}</h4>
+              </mat-card>
+          </div>
+      </div>
+  </div>
+
+</form>
+
+</div>

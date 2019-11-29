@@ -1,0 +1,65 @@
+.mat-card-css-administration {
+    width: 400px;
+    background: #191f3f;
+    color: rgb(214, 214, 216);
+    font-weight: bolder;
+    height: 220px!important;
+    font-size: 100%;
+
+}
+
+.mat-card-css-approve {
+    width: 400px;
+    background: #191f3f;
+    color: rgb(214, 214, 216);
+    font-weight: bold;
+    height: 220px!important;
+    font-size: 100%;
+   
+}
+
+.mat-card-css-addNew {
+    width: 400px;
+    background: rgb(117, 117, 136);
+    color: #191f3f;
+    font-weight: bold;
+    height: 220px!important;
+    font-size: 100%;
+
+}
+
+.mat-card-css-assign {
+    width: 400px;
+    background:  rgb(117, 117, 136);
+    color: #191f3f;
+    font-weight: bold;
+    height: 220px;
+    font-size: 100%;
+
+}
+
+mat-grid-list {
+    padding: 100px;
+}
+
+.administration-css {
+    background: #ffffff;
+    height: 90vh!important;
+}
+
+.button {
+    width:382px!important;
+    font-size: 100%!important;
+}
+    .head
+    {
+        
+        margin-left:40%!important;
+    }
+    .divv{
+        background-color: darkgoldenrod;
+    
+    }
+    
+
+

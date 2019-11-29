@@ -1,0 +1,66 @@
+mat-tab-group {
+  background-color:white;
+}
+
+.users-css {
+  margin-top: 100px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+
+.example-form1 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width1 {
+  width: 100%;
+}
+
+
+.example-form2 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width2 {
+  width: 100%;
+}
+
+
+.example-form3 {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width3 {
+  width: 100%;
+}
+
+.example-option-img {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+[dir='rtl'] .example-option-img {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+.search_bar_css {
+    
+  margin: auto!important;
+  margin-left: 25%!important;
+}

@@ -1,0 +1,36 @@
+ <div>
+    <h1 class="head"></h1>
+</div>
+<div class="divv">
+    <h1 class="head">Students' Article</h1>
+</div>
+
+
+<button (click)="onClick()" class="btn-addnews-css" *ngIf="userType === 'STUDENT'">
+    <mat-icon svgIcon="add" inline="true" class="view-profile-css"></mat-icon>Add Article
+</button>
+
+
+    <div *ngIf="userType === 'TEACHER'">
+            <mat-tab-group  mat-stretch-tabs>
+                    <mat-tab label="Pending"> 
+                        
+                            <app-article-post *ngFor="let x of pendingArticleList" [articleDTO]="x" (onApproveP)="onApproveP($event)" (onRejectP)="onRejectP($event)" class="head"></app-article-post>
+
+                    </mat-tab>
+                    <mat-tab label="Approved">  
+                        
+                            <app-article-post  *ngFor="let x of approvedArticleList" [articleDTO]="x" class="head"></app-article-post>
+
+                    </mat-tab>
+        `    </mat-tab-group>
+    </div>
+            
+        
+        <div *ngIf="userType !== 'TEACHER'">
+            <app-article-post *ngFor="let x of approvedArticleList" [articleDTO]="x" class="head"></app-article-post>
+       </div>
+    
+    
+    
+    

@@ -1,0 +1,30 @@
+<div><h1 class="head"></h1></div>
+<div class="divv"><h1 class="head">School News</h1></div>
+<div>
+<button (click)="onClick()" class="btn-addnews-css" *ngIf="userType === 'ADMIN' || userType === 'TEACHER'">
+    <mat-icon svgIcon="add" inline="true" class="view-profile-css"></mat-icon>Add News</button></div>
+
+
+    <div *ngIf="userType === 'ADMIN'">
+            <mat-tab-group  mat-stretch-tabs>
+                    <mat-tab label="Pending"> 
+                        
+                            <app-teachernews *ngFor="let x of pendingTeacherNews" [teacherNewsDTO]="x" (onApproveP)="onApproveP($event)"  (onRejectP)="onRejectP($event)" class="head"></app-teachernews>
+
+                    </mat-tab>
+                    <mat-tab label="Approved">  
+                            <app-teachernews *ngFor="let x of teacherNews"  [teacherNewsDTO]="x" class="head"></app-teachernews>
+                            <app-news-post *ngFor="let x of adminNews"  [newsDTO]="x" class="head"></app-news-post>
+                           
+                    </mat-tab>
+        `    </mat-tab-group>
+    </div>
+            
+        
+        <div *ngIf="userType !== 'ADMIN'">
+                <app-news-post *ngFor="let x of adminNews"  [newsDTO]="x" class="head"></app-news-post>
+                <app-teachernews *ngFor="let x of teacherNews"  [teacherNewsDTO]="x" class="head"></app-teachernews>
+       </div>
+    
+
+    

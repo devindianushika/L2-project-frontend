@@ -1,0 +1,16 @@
+.cardproperties{
+    background-color: rgba(46, 33, 133, 0.3);
+    max-width: 400px;
+    align-self: center;
+  }
+  .dropdownproperties{
+    text-align: right;
+  }
+  .divproperties{
+    text-align: left;
+  }
+  .maincardproperties{
+      background-color: rgb(55,121,196,0.4);
+      max-width: 400px;
+      align-self: center;
+  }

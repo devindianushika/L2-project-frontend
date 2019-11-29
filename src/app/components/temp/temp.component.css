@@ -1,0 +1,36 @@
+.card-plain{
+    background: transparent;
+    box-shadow: none;
+}
+    .card-header{
+        margin-left: 0;
+        margin-right: 0;
+        background-color: transparent;
+    }
+
+    .card-footer{
+        margin-left: 0;
+        margin-right: 0;
+        background-color: transparent;
+    }
+
+    .card-body{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .card-title{
+        margin-top: 10px;
+        margin-bottom: 0;
+      }
+      .card-category{
+        margin-bottom: 5px;
+      }
+
+      .dropdown{
+        position: absolute;
+        right: 20px;
+        top: 20px;
+      }
+        .btn{
+          margin: 0;
+        }

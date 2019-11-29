@@ -1,0 +1,29 @@
+<h1 mat-dialog-title>Assign Subject to Class</h1>
+<div mat-dialog-content>
+  
+    <mat-form-field>
+        <input matInput placeholder="Subject" [(ngModel)]="data.subject.subjectId" aria-label="Subject" [matAutocomplete]="auto" [formControl]="subjectCtrl" class="input-css" required>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let subject of filteredSubjects | async" [value]="subject.subjectId">
+            <span>{{subject.subjectId}}</span> |
+            <small>{{subject.name}}</small>
+          </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="Teacher" [(ngModel)]="data.teacher.registrationNumber" aria-label="Teacher" [matAutocomplete]="autoteacher" [formControl]="teacherCtrl" class="input-css" required>
+        <mat-autocomplete #autoteacher="matAutocomplete">
+          <mat-option *ngFor="let teacher of filteredTeachers | async" [value]="teacher.registrationNumber">
+            <span>{{teacher.registrationNumber}}</span> |
+            <small>{{teacher.fullName}}</small>
+          </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onCancelClick()" style="background-color: red;font-weight: bold;color: white">Cancel</button>
+    <button mat-button   (click)="assign()" cdkFocusInitial style="background-color: forestgreen;font-weight: bold;color: white">Assign</button>
+</div>
+

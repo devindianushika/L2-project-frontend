@@ -1,0 +1,98 @@
+<div >
+    <mat-tab-group  mat-stretch-tabs>
+        <mat-tab label="Admins">
+
+            <br>
+           <div class="search_bar_css">
+            <form class="example-form1">
+                <mat-form-field class="example-full-width1">
+                        <input matInput placeholder="search admins" aria-label="Admin" [matAutocomplete]="autoAdmin" [formControl]="adminCtrl">
+                        <mat-icon matSuffix>search_icon</mat-icon>
+                        <mat-autocomplete #autoAdmin="matAutocomplete">
+                          <mat-option *ngFor="let admin of filteredAdmins | async" [value]="admin.registrationNumber">
+                            <img class="example-option-img" aria-hidden src="{{ backendUrl }}file/images/get/PROFILE_ADMIN/{{admin.profile_uri}}/" onError="this.src='../../../../assets/img/uprofile.png'" height="25">
+                            <span>{{admin.registrationNumber}}</span> 
+                          </mat-option>
+                        </mat-autocomplete>
+                </mat-form-field>
+            </form>
+
+        </div> 
+                <br>
+
+            <app-adminprofile *ngFor="let x of adminSelectedListed" [adminDTO]="x"></app-adminprofile> 
+             <p *ngIf="emptyAdminsList" style="text-align: center;">No Results</p>
+        </mat-tab>
+
+        <mat-tab label="Parents">
+
+                <br>
+                <div class="search_bar_css">
+                <form class="example-form2">
+                <mat-form-field class="example-full-width2">
+                        <input matInput placeholder="Search parents" aria-label="Parent" [matAutocomplete]="autoParent" [formControl]="parentCtrl">
+                        <mat-icon matSuffix>search_icon</mat-icon>
+                        <mat-autocomplete #autoParent="matAutocomplete">
+                          <mat-option *ngFor="let parent of filteredParents | async" [value]="parent.registrationNumber">
+                            <img class="example-option-img" aria-hidden src="{{ backendUrl }}file/images/get/PROFILE_PARENT/{{parent.profile_uri}}/"  onError="this.src='../../../../assets/img/uprofile.png'" height="25">
+                            <span>{{parent.registrationNumber}}</span> 
+                          </mat-option>
+                        </mat-autocomplete>
+                </mat-form-field>
+                </form>
+                </div> 
+                <br>
+
+            <app-parentprofile *ngFor="let x of parentSelectedListed" [parentDTO]="x"></app-parentprofile>
+            <p *ngIf="emptyParentsList" style="text-align: center;">No Results</p>
+        
+        </mat-tab>
+
+        <mat-tab label="Students">
+            <br>
+             <div class="search_bar_css">
+            <form class="example-form3">
+                <mat-form-field class="example-full-width3">
+                        <input matInput placeholder="Search students" aria-label="Student" [matAutocomplete]="autoStudent" [formControl]="studentCtrl">
+                        <mat-icon matSuffix>search_icon</mat-icon>
+                        <mat-autocomplete #autoStudent="matAutocomplete">
+                          <mat-option *ngFor="let student of filteredStduents | async" [value]="student.registrationNumber">
+                            <img class="example-option-img" src="{{ backendUrl }}file/images/get/PROFILE_STUDENT/{{student.profile_uri}}/"  onError="this.src='../../../../assets/img/uprofile.png'" height="25">
+                            <span>{{student.registrationNumber}}</span> 
+                          </mat-option>
+                        </mat-autocomplete>
+                </mat-form-field>
+            </form>
+            </div>
+                <br>
+
+            <app-studentprofile *ngFor="let x of studentList" [studentDTO]="x"></app-studentprofile>
+            <p *ngIf="emptyStudentsList" style="text-align: center;">No Results</p> 
+        
+        </mat-tab>
+
+        <mat-tab label="Teachers">
+            <br>
+            <div class="search_bar_css">
+            <form class="example-form3">
+                <mat-form-field class="example-full-width3">
+                        <input matInput placeholder="Search teachers" aria-label="Teacher" [matAutocomplete]="autoTeacher" [formControl]="teacherCtrl">
+                        <mat-icon matSuffix>search_icon</mat-icon>
+                        <mat-autocomplete #autoTeacher="matAutocomplete">
+                          <mat-option *ngFor="let teacher of filteredTeachers | async" [value]="teacher.registrationNumber">
+                            <img class="example-option-img" src="{{ backendUrl }}file/images/get/PROFILE_TEACHER/{{teacher.profile_uri}}/" onError="this.src='../../../../assets/img/uprofile.png'"  height="25">
+                            <span>{{teacher.registrationNumber}}</span> 
+                          </mat-option>
+                        </mat-autocomplete>
+                </mat-form-field>
+            </form>
+            </div>
+                <br>
+
+            <app-teacherprofile *ngFor="let x of teacherList" [teacherDTO]="x"></app-teacherprofile>
+            <p *ngIf="emptyTeachersList" style="text-align: center;">No Results</p>
+        
+        </mat-tab>
+
+    </mat-tab-group>
+</div>

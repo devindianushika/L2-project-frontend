@@ -1,0 +1,49 @@
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Grade" [(ngModel)]="data.grade" required>
+    </mat-form-field>
+    <div mat-dialog-content>
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Id" [(ngModel)]="data.id" required>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Year" [(ngModel)]="data.year" required>
+      </mat-form-field>
+
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="location" [(ngModel)]="data.location" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="medium" [(ngModel)]="data.medium" required>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="stream" [(ngModel)]="data.stream" required>
+      </mat-form-field>
+      <!-- <mat-form-field>
+        <mat-label>Class Teacher</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let teacher of teacherList" [value]="teacher.registrationNumber">
+            {{teacher.fullName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> -->
+
+
+      <mat-form-field>
+        <input matInput placeholder="Teacher" [(ngModel)]="data.classTeacher" aria-label="Teacher" [matAutocomplete]="auto"  class="input-css">
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let teacher of teacherList" [value]="teacher.registrationNumber">
+            <span>{{teacher.registrationNumber}}</span> |
+            <small>{{teacher.fullName}}</small>
+          </mat-option>
+        </mat-autocomplete>
+    </mat-form-field>
+
+
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button (click)="onAdd()">Add</button>
+        
+      </div>

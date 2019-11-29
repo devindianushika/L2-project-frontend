@@ -1,0 +1,17 @@
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+body {
+    margin: 0;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.full-width-dialog .mat-dialog-container {
+    max-width: 5000px !important;
+  }
+
+  /* .mat-dialog-container {
+    background: #FFA90A;
+  } */

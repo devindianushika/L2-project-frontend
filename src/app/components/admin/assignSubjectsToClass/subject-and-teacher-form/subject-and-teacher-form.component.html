@@ -1,0 +1,46 @@
+<h4 class="h">Assign Subjects to Classes</h4>
+
+<mat-card><div class="section">
+   <mat-form-field class="example-full-width" class="divv">
+      <input matInput placeholder="Grade" [(ngModel)]="grade">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" class="divv">
+        <input matInput placeholder="Id" [(ngModel)]="id">
+      </mat-form-field>
+      <mat-form-field class="example-full-width" class="divv">
+        <input matInput placeholder="Year" [(ngModel)]="year">
+      </mat-form-field>
+      <button mat-raised-button color="primary" class="divv" (click)="onGoToSubjectList()">Go to Subject List</button>
+   
+      <button mat-raised-button color="primary" class="divv"  (click)="onAssignNewSubject()" class="add">Assign New Subject</button> 
+    
+    </div></mat-card>
+
+  
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+      <ng-container matColumnDef="subjectID">
+        <th mat-header-cell *matHeaderCellDef> Subject ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.subjectID}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="subjectName">
+        <th mat-header-cell *matHeaderCellDef> Subject Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.subjectName}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="teacherID">
+        <th mat-header-cell *matHeaderCellDef> Teacher ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.teacherID}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="teacherName">
+        <th mat-header-cell *matHeaderCellDef> Teacher Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.teacherName}} </td>
+      </ng-container>
+    
+     
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table> 

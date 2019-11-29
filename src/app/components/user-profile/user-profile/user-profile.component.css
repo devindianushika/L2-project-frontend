@@ -1,0 +1,19 @@
+.edit-profile{
+    background:green;
+    margin-right: 5px;
+}
+
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display:block;
+    margin:auto;
+}
+
+.title
+ {
+     text-align: center;
+    display:block;
+    margin:auto;
+}

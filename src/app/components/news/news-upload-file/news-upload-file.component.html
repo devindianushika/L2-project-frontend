@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Post News</h1>
+<div mat-dialog-content>
+  
+  <mat-form-field>
+    <input matInput [(ngModel)]="data.title" required>
+    <mat-placeholder>Title</mat-placeholder>
+  </mat-form-field> <br>
+
+
+  <img class="avatar border-gray" *ngIf="previewUrl" [src]="previewUrl" alt="..." (click)="selectFile.click()" />
+  <img class="avatar border-gray" *ngIf="!previewUrl"   src="../../../../assets/postupload.png" alt="..." (click)="selectFile.click()" />
+  <input type="file" accept="image/*" (change)="fileProgress($event)" style="display: none" #selectFile>
+
+  <mat-form-field>
+      <textarea matInput placeholder="Description" [(ngModel)]="data.description"></textarea>
+  </mat-form-field> <br>
+
+  
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onCancelClcik()">Cancel</button>
+  <button mat-button (click)="onPost()">Post</button>
+</div>

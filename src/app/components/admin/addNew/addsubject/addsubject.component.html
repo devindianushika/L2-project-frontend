@@ -1,0 +1,13 @@
+<div mat-dialog-content>
+    <mat-form-field>
+        <input matInput [(ngModel)]="data.subjectId" placeholder="Subject ID" required>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="data.name" placeholder="Name" required>
+      </mat-form-field>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="onAdd()">Add</button>
+    
+  </div>

@@ -1,0 +1,25 @@
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        
+        <mat-panel-title>
+            <img mat-card-avatar  src="{{ backendUrl }}file/images/get/PROFILE_TEACHER/{{imgUrl}}/"  onError="this.src='../../../../assets/img/uprofile.png'" class="example-header-image">
+          
+        </mat-panel-title>
+        <mat-panel-description>
+             
+          {{ registrationNumber }} | {{ fullName }}
+         
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+        <p>Email : {{ email }} <br> Gender : {{  gender }}
+        
+          Contact Number : {{ contactNumber }}
+        </p>
+     
+    </mat-expansion-panel>
+
+</mat-accordion>
+
+

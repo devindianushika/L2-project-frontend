@@ -1,0 +1,46 @@
+<div>
+    <div>
+      <div style="display: block">
+        <canvas baseChart
+        height="20vh" width="60vw"
+        
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [plugins]="barChartPlugins"
+          [legend]="barChartLegend"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+     
+    </div>
+<br>
+
+    <!-- <h2 style="text-align:center">Progress Report</h2> -->
+
+<div class="card">
+    <table>
+        <tr>
+            <th>
+Registration Number
+            </th>
+            <th>
+Name
+            </th>
+            <th>
+Average Mark
+            </th>
+
+        </tr>
+        <tr>
+            <td>S001</td>
+            <td><label for="student name">A B C Perera </label></td>
+            <td><label for="subjectnsme"> aaaaa</label></td>
+        </tr>
+
+
+    </table><p> <button mat-button mat-raised-button color="primary" (click)="randomize()">Update</button></p>
+</div>
+
+
+</div>

@@ -1,0 +1,37 @@
+<mat-accordion class="example-headers-align">
+    <mat-expansion-panel  hideToggle>
+      <mat-expansion-panel-header>
+        
+        <mat-panel-title>
+            <img mat-card-avatar  src="{{ backendUrl }}file/images/get/PROFILE_PARENT/{{imgUrl}}/" onError="this.src='../../../../assets/img/uprofile.png'" class="example-header-image">
+            
+        </mat-panel-title>
+        <mat-panel-description>
+             
+          {{ registrationNumber }} | {{ fullName }}
+         
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+        <p>Email : {{ email }} <br> Gender : {{  gender }}
+        
+        <br>
+
+        Contact Number : {{ contactNumber }}
+ <br> Address : {{ address }}
+        </p>
+
+        <br> My children <br>
+
+     
+        <div *ngFor="let x of myChildren">
+              <img mat-card-avatar  src="{{ backendUrl }}file/images/get/PROFILE_STUDENT/{{x.profile_uri}}/" onError="this.src='../../../../assets/img/uprofile.png'" class="example-header-image">      
+            {{ x.registrationNumber }} | {{ x.fullName }}
+           
+        </div>
+
+     
+    </mat-expansion-panel>
+
+</mat-accordion>
+
